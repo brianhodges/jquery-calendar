@@ -1,0 +1,88 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <!-- scripts -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/bootstrap-timepicker.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/clock.js"></script>
+    <!-- /scripts -->
+    <!-- styles -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/bootstrap-timepicker.css">
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- /styles -->
+    <title>jQuery Calendar</title>
+</head>
+<body>
+    
+    <!-- navigation sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav pre-scrollable" style="max-height:900px;">
+            <li><a href="./index.html">Calendar</a></li>
+            <li><a href="./new.html">New Reservation</a></li>
+        </ul>
+        <div id="sidebar-footer">
+            v1.5.1
+        </div>
+    </div>
+    <!-- /navigation sidebar -->
+
+    <div class="container">
+        <h1>New Reservation</h1>
+        <!-- worldclocks -->
+        <table>
+            <tr>
+                <td class="world-clock"><strong>Fargo, ND</strong><p id="fargo"></p></td>
+                <td class="world-clock"><strong>Richmond, VA</strong><p id="richmond"></p></td>
+            </tr>
+        </table>
+        <!-- /worldclocks -->
+        <!-- datepicker -->
+        <div class="field">
+            <label>Date:</label>
+            <div class="form-group">
+                <div class='input-group date' id='datepicker'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- /datepicker -->
+                 
+        <div class="field">
+            <!-- start timepicker -->
+            <label>Start Time:</label>
+            <div class="new-field input-group bootstrap-timepicker timepicker">
+                <input id="start_timepicker" name="start" type="text" class="form-control input-small">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+            </div>
+            <!-- /start timepicker -->
+            <br/>
+            <!-- end timepicker -->
+            <label>End Time:</label>
+            <div class="new-field input-group bootstrap-timepicker timepicker">
+                <input id="end_timepicker" name="end" type="text" class="form-control input-small">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+            </div>
+            <!-- /end timepicker -->
+        </div>
+        <br>
+        <label>Message:</label>
+        <input type="text" class="new-field form-control" id="message">
+        <br>
+        <!-- Book Reservation Button -->
+        <button type="button" class="btn btn-success" onclick="addDate();">Book</button>
+        <!-- /Book Reservation Button -->
+    </div>
+</body>
+</html>

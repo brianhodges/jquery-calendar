@@ -1,0 +1,89 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <!-- scripts -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/bootstrap-timepicker.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- /scripts -->
+    <!-- styles -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/bootstrap-timepicker.css">
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- /styles -->
+    <title>jQuery Calendar</title>
+</head>
+<body>
+    
+    <!-- navigation sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav pre-scrollable" style="max-height:900px;">
+            <li><a href="./index.html">Calendar</a></li>
+            <li><a href="./new.html">New Reservation</a></li>
+        </ul>
+        <div id="sidebar-footer">
+            v1.5.1
+        </div>
+    </div>
+    <!-- /navigation sidebar -->
+
+    <div class="container">
+         <!-- datepicker -->
+        <div>
+            <label>Find By Date:</label>
+            <div class="form-group">
+                <div class='input-group date' id='displaydatepicker'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- /datepicker -->
+        
+        <h1>Calendar</h1>
+        <div class="slider">
+            <div class="slider-container">
+                <input type="hidden" id="reservation_id" value=""/>
+                <h1 id="slider-date"></h1>
+                <!-- start timepicker -->
+                <label>Start Time:</label>
+                <div class="index-field input-group bootstrap-timepicker timepicker">
+                    <input id="start_timepicker" name="start" type="text" class="form-control input-small">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                </div>
+                <!-- /start timepicker -->
+                <br/>
+                <!-- end timepicker -->
+                <label>End Time:</label>
+                <div class="index-field input-group bootstrap-timepicker timepicker">
+                    <input id="end_timepicker" name="end" type="text" class="form-control input-small">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                </div>
+                <!-- /end timepicker -->
+                <br>
+                <label>Message:</label>
+                <input type="text" class="index-field form-control" id="message">
+                <br>
+                <div class="action-buttons">
+                    <button type="button" class="btn btn-default" onclick="hideSlider();">Cancel</button>
+                    <button type="button" class="btn btn-danger" onclick="remove();">Delete</button>
+                    <button type="button" class="btn btn-primary" onclick="save();">Save</button>
+                </div>
+            </div>
+        </div>
+        <!-- calendar list populated by jquery localstorage array -->
+        <ul id="calendar_list">
+        </ul>
+        <!-- /calendar list -->
+    </div>
+</body>
+</html>
